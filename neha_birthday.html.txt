@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Neha 🎉</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Courier New', monospace;
+      background: url('https://i.imgur.com/JBAeLfV.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      margin-top: 100px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 20px;
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: 40px;
+      text-shadow: 2px 2px 5px #000;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    p {
+      font-size: 20px;
+      margin-top: 20px;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ff8a00, 0 0 20px #ff8a00;
+      }
+      to {
+        text-shadow: 0 0 20px #ff4500, 0 0 30px #ff6f00;
+      }
+    }
+
+    #music {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Happy Birthday Neha 🎂</h1>
+  <p>From lines of code to lines of Jugrafiyan...<br>
+     You're the syntax to my logic 💻❤️</p>
+  <p>Even if we haven't spent a lot of time,<br>
+     It feels like I've known you forever 🗺️🌍</p>
+  <p style="margin-top:30px;">🎶 *Jugrafiyan playing in the background...* 🎶</p>
+</div>
+
+<audio id="music" autoplay loop>
+  <source src="https://dl.sndup.net/2jwg/Jugraafiyan.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  window.onload = () => {
+    const audio = document.getElementById('music');
+    audio.play().catch(() => {
+      alert("Click to allow music to play 🎵");
+    });
+  };
+
+  const colors = ['#ff5e57', '#ffc048', '#ffdd59', '#05c46b', '#0fbcf9', '#575fcf'];
+
+  function createConfetti() {
+    const confetti = document.createElement('div');
+    confetti.style.position = 'fixed';
+    confetti.style.width = '10px';
+    confetti.style.height = '10px';
+    confetti.style.borderRadius = '50%';
+    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    confetti.style.left = Math.random() * 100 + 'vw';
+    confetti.style.top = '-10px';
+    confetti.style.animation = 'fall 3s linear forwards';
+    document.body.appendChild(confetti);
+
+    setTimeout(() => {
+      confetti.remove();
+    }, 3000);
+  }
+
+  setInterval(createConfetti, 200);
+
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+</script>
+
+</body>
+</html>
